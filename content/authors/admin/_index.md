@@ -1,27 +1,30 @@
 ---
-bio: My research interests include distributed robotics, mobile computing and programmable
-  matter.
+bio: My research interests include mathematical modeling of infectious disease epidemiology and health disparities. 
 education:
-  courses:
-  - course: PhD in Artificial Intelligence
-    institution: Stanford University
-    year: 2012
-  - course: MEng in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2009
-  - course: BSc in Artificial Intelligence
-    institution: Massachusetts Institute of Technology
-    year: 2008
+  Degrees:
+  - degree: MD, PhD in Health & Biomedical Informatics
+    institution: Northwestern University MSTP
+    year: 2019-2027
+  - degree: NIH PREP Fellowship
+    institution: Icahn School of Medicine at Mt. Sinai
+    year: 2017-2018
+  - degree: BS in Molecular, Cellular, and Developmental Biology
+    institution: Yale University
+    year: 2013-2017
 email: ""
 highlight_name: true
 interests:
-- Artificial Intelligence
-- Computational Linguistics
-- Information Retrieval
+- Infectious Disease
+- Environmental Health
+- Climate Change
+- Agent-Based Modeling
+- Health Disparities
+- Malaria
+- COVID-19
 organizations:
-- name: Stanford University
-  url: https://www.stanford.edu/
-role: Professor of Artificial Intelligence
+- name: Malaria and COVID-19 Modeling Group at Northwestern
+  url: https://www.numalariamodeling.org/team.html
+role: MD-PhD Student
 social:
 - icon: envelope
   icon_pack: fas
@@ -42,8 +45,9 @@ superuser: true
 title: Nelson Bighetti
 ---
 
-Nelson Bighetti is a professor of artificial intelligence at the Stanford AI Lab. His research interests include distributed robotics, mobile computing and programmable matter. He leads the Robotic Neurobiology group, which develops self-reconfiguring robots, systems of self-organizing robots, and mobile sensor networks.
+Tobias is an MD-PhD student in the Medical Scientist Training Program (MSTP) at Northwestern University. He is originally from South Carolina and graduated from Yale University in 2017 with a degree in Molecular, Cellular, and Developmental Biology. His PhD research is focused on modeling interventions to reduce malaria transmission. 
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+He is interested in applying mathematical modeling to population health, with a focus on social and environmental determinants of disease. He hopes to combine his training from HSIP and medical school to address the community health challenges that result from global climate change.
+
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
