@@ -1,14 +1,14 @@
 ---
 bio: My research interests include mathematical modeling of infectious disease epidemiology and health disparities. 
 education:
-  Degrees:
-  - degree: MD, PhD in Health & Biomedical Informatics
+  courses:
+  - course: MD, PhD in Health & Biomedical Informatics
     institution: Northwestern University MSTP
     year: 2019-2027
-  - degree: NIH PREP Fellowship
+  - course: NIH PREP Fellowship
     institution: Icahn School of Medicine at Mt. Sinai
     year: 2017-2018
-  - degree: BS in Molecular, Cellular, and Developmental Biology
+  - course: BS in Molecular, Cellular, and Developmental Biology
     institution: Yale University
     year: 2013-2017
 email: ""
@@ -42,10 +42,10 @@ social:
   icon_pack: fab
   link: https://www.linkedin.com/
 superuser: true
-title: Nelson Bighetti
+title: Tobias Holden
 ---
 
-Tobias is an MD-PhD student in the Medical Scientist Training Program (MSTP) at Northwestern University. He is originally from South Carolina and graduated from Yale University in 2017 with a degree in Molecular, Cellular, and Developmental Biology. His PhD research is focused on modeling interventions to reduce malaria transmission. 
+Tobias Holden is an MD-PhD student in the Medical Scientist Training Program (MSTP) at Northwestern University. He is originally from South Carolina and graduated from Yale University in 2017 with a degree in Molecular, Cellular, and Developmental Biology. His PhD research is focused on modeling interventions to reduce malaria transmission. 
 
 He is interested in applying mathematical modeling to population health, with a focus on social and environmental determinants of disease. He hopes to combine his training from HSIP and medical school to address the community health challenges that result from global climate change.
 

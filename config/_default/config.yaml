@@ -1,5 +1,8 @@
-theme_day: "rose"
-theme_night: "rose"
+appearance:
+  theme_day: ocean
+  theme_night: ocean
+  font: minimal
+  font_size: L
 
 # Configuration of Hugo
 # Guide: https://wowchemy.com/docs/getting-started/
