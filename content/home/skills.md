@@ -41,8 +41,8 @@ feature:
     icon_pack: fas
     name: Scientific Writing
   - description: 
-    icon: keynote
-    icon_pack: fab
+    icon: podium
+    icon_pack: fas
     name: Public Speaking
     
 # Uncomment to use emoji icons.
