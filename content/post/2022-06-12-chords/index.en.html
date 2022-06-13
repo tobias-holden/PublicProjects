@@ -1,0 +1,38 @@
+---
+title: "Chords"
+author: "Tobias Holden"
+date: "6/12/2022"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+
+
+<pre class="r"><code>artist &lt;- &quot;olivia-rodrigo&quot;
+songs &lt;- chorrrds::get_songs(artist)
+chords &lt;- chorrrds::get_chords(songs)
+
+sc &lt;- chords %&gt;% 
+  filter(!duplicated(song)) %&gt;%
+  select(song,key) %&gt;%
+  arrange(key)
+
+sc$rank &lt;- rownames(sc)
+
+chords &lt;- merge(chords,sc,by=c(&quot;song&quot;,&quot;key&quot;))
+
+chords %&gt;% 
+  ggplot(aes(x=chord, y=factor(rank,levels=sc$rank, labels=sc$song), fill=key)) +
+  geom_tile(color=&#39;white&#39;)+
+  theme_minimal()+
+  theme(panel.grid=element_blank(),
+        legend.position=&quot;bottom&quot;,
+        axis.text.x = element_text(size=8,
+                                angle=90,
+                                hjust=0,
+                                vjust=0)) +
+  scale_x_discrete(position=&quot;top&quot;) +
+  ylab(&quot;Songs&quot;) + xlab(&quot;Chords&quot;) +
+  ggtitle(paste(artist,&quot;song chords&quot;))</code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>

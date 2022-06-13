@@ -1,0 +1,46 @@
+---
+title: "Chords"
+author: "Tobias Holden"
+date: "6/12/2022"
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(chorrrds)
+library(tidyverse)
+```
+
+
+```{r}
+artist <- "olivia-rodrigo"
+songs <- chorrrds::get_songs(artist)
+chords <- chorrrds::get_chords(songs)
+
+sc <- chords %>% 
+  filter(!duplicated(song)) %>%
+  select(song,key) %>%
+  arrange(key)
+
+sc$rank <- rownames(sc)
+
+chords <- merge(chords,sc,by=c("song","key"))
+
+chords %>% 
+  ggplot(aes(x=chord, y=factor(rank,levels=sc$rank, labels=sc$song), fill=key)) +
+  geom_tile(color='white')+
+  theme_minimal()+
+  theme(panel.grid=element_blank(),
+        legend.position="bottom",
+        axis.text.x = element_text(size=8,
+                                angle=90,
+                                hjust=0,
+                                vjust=0)) +
+  scale_x_discrete(position="top") +
+  ylab("Songs") + xlab("Chords") +
+  ggtitle(paste(artist,"song chords"))
+
+```
+
