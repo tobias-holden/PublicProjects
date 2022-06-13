@@ -13,7 +13,7 @@ authors:
 - Damon T. Arnold
 - Veronica Halloway
 - Jaline Gerardin
-date: "2013-07-01T00:00:00Z"
+date: "2022-02-15-01T00:00:00Z"
 doi: "https://doi.org/10.1186/s12889-022-12698-9"
 featured: true
 image:
@@ -25,7 +25,7 @@ projects:
 publication: In *BMC Public Health*
 publication_short: In *BMC PH*
 publication_types:
-- "1"
+- "2"
 publishDate: "2022-02-15T00:00:00Z"
 slides: example
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
