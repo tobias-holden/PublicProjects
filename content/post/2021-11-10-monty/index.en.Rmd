@@ -6,8 +6,6 @@ categories: ["R"]
 tags: ["R Markdown", "puzzles"]
 ---
 
-# Chorrrds
-
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 library(ggplot2)
