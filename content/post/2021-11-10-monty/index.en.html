@@ -1,0 +1,136 @@
+---
+title: "Monty Hall Problem"
+author: "Tobias Holden"
+date: "11/10/2021"
+categories: ["R"]
+tags: ["R Markdown", "puzzles"]
+---
+
+
+
+<div id="chorrrds" class="section level1">
+<h1>Chorrrds</h1>
+<div id="monty-hall-problem" class="section level2">
+<h2>Monty Hall Problem</h2>
+<ol style="list-style-type: decimal">
+<li>Host draws a random # (1, 2, or 3) is - this is the prize-winning number. The other 2 numbers are assigned “goat”</li>
+<li>Contestant “chooses” a number 1, 2 or 3.</li>
+<li>Host randomnly “reveals a goat”, by by disclosing one of the non-winning numbers</li>
+<li>Contestant either keeps their original choose (keep model) or switches (switch model) their number choice between the two remaining options.</li>
+</ol>
+<pre class="r"><code>monty &lt;- function(model = &quot;keep&quot;, num = 100) {
+  results &lt;- c()
+  mds &lt;- c()
+  ids &lt;- c()
+  for (md in model)
+  {
+    for (i in 1:num)
+    {
+      mds &lt;- c(mds, md)
+      ids &lt;- c(ids, i)
+      doors &lt;- c(&quot;Door 1&quot;, &quot;Door 2&quot;, &quot;Door 3&quot;)
+      car_door &lt;- sample(doors, 1)
+      goat_doors &lt;- doors[doors != car_door]
+      choice &lt;- doors[runif(1, 2, 3)]
+      if (md == &quot;keep&quot;) {
+        results &lt;- c(results, choice == car_door)
+      }
+      if (md == &quot;switch&quot;)
+      {
+        reveal &lt;- sample(goat_doors[goat_doors != choice], 1)
+        results &lt;-
+          c(results, doors[doors != choice &amp; doors != reveal] == car_door)
+      }
+    }
+  }
+  
+  #ids[ids&gt;n] &lt;- (ids[ids&gt;n] %% (n+1) + 1)
+  out &lt;- data.frame(run = ids,
+                    strategy = mds,
+                    result = results)
+  cumsum &lt;- out %&gt;% group_by(strategy) %&gt;% summarise(z=cumsum(result))
+  out$cum_win &lt;- cumsum$z
+  return(out)
+  
+}
+
+montyDoors &lt;- function(model = &quot;keep&quot;, num = 100, d = 3, c=1) {
+  results &lt;- c()
+  mds &lt;- c()
+  ids &lt;- c()
+  ncar &lt;- c()
+  ndoor &lt;- c()
+  for(nd in 3:d)
+  {
+    for(nc in 1:min(c,nd-2))
+    {
+  for (md in model)
+  {
+    for (i in 1:num)
+    {
+      ndoor &lt;- c(ndoor,nd)
+      ncar &lt;- c(ncar,nc)
+      mds &lt;- c(mds, md)
+      ids &lt;- c(ids, i)
+      doors &lt;- paste(&quot;Door #&quot;, seq(1,nd))
+      car_doors &lt;- sample(doors, nc)
+      goat_doors &lt;- doors[!(doors %in% car_doors)]
+      choice &lt;- sample(doors,1)
+      if (md == &quot;keep&quot;) {
+        results &lt;- c(results, choice %in% car_doors)
+      }
+      if (md == &quot;switch&quot;)
+      {
+        reveal &lt;- sample(goat_doors[goat_doors != choice], 1)
+        new_choice &lt;- sample(doors[doors != choice &amp; doors!=reveal],1)
+        results &lt;-c(results, new_choice %in% car_doors)
+      }
+    }
+  }
+    }
+  }
+
+  
+  #ids[ids&gt;n] &lt;- (ids[ids&gt;n] %% (n+1) + 1)
+  out &lt;- data.frame(run = ids,
+                    n_car = ncar,
+                    n_door = ndoor,
+                    strategy = mds,
+                    result = results)
+  out &lt;- out %&gt;% group_by(strategy, n_door, n_car) %&gt;% arrange(run) %&gt;% summarise(run=run,result=result,cum_win=cumsum(result), final=NA)
+  for (j in 1:nrow(out))
+  {
+    if(out$run[j]==num &amp; out$strategy[j]==&quot;switch&quot;)
+    {
+      d &lt;- out$n_door[j]
+      c &lt;- out$n_car[j]
+      hub &lt;- subset(out, out$run==num &amp; out$n_door==d &amp; out$n_car ==c)
+      out$final[j] &lt;- round(hub$cum_win[hub$strategy==&quot;switch&quot;] / hub$cum_win[hub$strategy==&quot;keep&quot;],2)
+    }
+  }
+  return(data.frame(out))
+  
+}
+
+
+
+
+
+m &lt;- montyDoors(model=c(&quot;keep&quot;,&quot;switch&quot;), num = 1000, d=10 , c=8)</code></pre>
+<pre><code>## `summarise()` has grouped output by &#39;strategy&#39;, &#39;n_door&#39;, &#39;n_car&#39;. You can
+## override using the `.groups` argument.</code></pre>
+<pre class="r"><code>ggplot(m, aes(x=run)) +
+  #geom_point(aes(y=as.numeric(result),color=&quot;Individual&quot;),alpha=0.05) +
+  #geom_jitter(aes(y=as.numeric(result),color=&quot;Individual&quot;),alpha=0.1, height = 0.02) +
+  #geom_segment(aes(xend=run, y=as.numeric(result),yend=cum_win/run, color=result), alpha=0.4,  size=0.2) +
+  geom_path(aes(y=cum_win/run, color=strategy)) +
+  facet_grid(n_door~n_car, labeller = label_both) +
+  labs(color=&quot;&quot;, linetype=&quot;&quot;) +
+  theme_presentation() +
+  theme(legend.box=&quot;vertical&quot;, legend.direction = &quot;horizontal&quot;, legend.justification = &quot;left&quot;, legend.box.just = &quot;left&quot;, legend.spacing = unit(-1,&quot;lines&quot;), axis.title.x=element_blank(), axis.text.x = element_blank()) +
+  ylab(&quot;Winning&quot;) +
+  guides(colour = guide_legend(override.aes = list(alpha = 1, size=2))) +
+  geom_text(data=m[!is.na(m$final),], aes(x=max(m$run)/2, y=0.8, label=final), x=max(m$run,na.rm=T)/ 2, y=0.8, color=&quot;yellow&quot;) </code></pre>
+<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+</div>
+</div>
