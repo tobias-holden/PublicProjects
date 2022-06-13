@@ -26,7 +26,7 @@ publication: In *BMC Public Health*
 publication_short: In *BMC PH*
 publication_types:
 - "1"
-publishDate: "2022-02-015T00:00:00Z"
+publishDate: "2022-02-15T00:00:00Z"
 slides: example
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
   ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
