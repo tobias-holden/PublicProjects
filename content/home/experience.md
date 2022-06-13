@@ -25,7 +25,7 @@ experience:
   - title: Malaria Modeling Research
     company: Dr. Jaline Gerardin \nNorthwestern University
     company_url: ''
-    company_logo: org-gc
+    company_logo: 
     location: Chicago, IL
     date_start: '2021-09-01'
     date_end: ''
@@ -35,15 +35,30 @@ experience:
         * Analysing
         * Modelling
         * Deploying
-
   - title: COVID-19 Disparities Research 
     company: Dr. Jaline Gerardin \nNorthwestern University
     company_url: ''
-    company_logo: org-x
+    company_logo: 
     location: Chicago, IL
     date_start: '2020-05-01'
     date_end: '2021-08-31'
-    description: Taught electronic engineering and researched semiconductor physics.
+    description:
+  - title: Education Centered Medical Home
+    company: Erie Family Health Center - Humboldt Park
+    company_url: ''
+    company_logo: 
+    location: Chicago, IL
+    date_start: '2019-09-01'
+    date_end: ''
+    description: Longitudinal primary care clerkship with Dr. Dorothy Dschida (Family Medicine) and Dr. Carly Berg (Pediatrics)
+  - title: Adolescent Brain Cognitive Development (ABCD) Study
+    company: Dr. Lindsay Squeglia, Medical University of South Carolina
+    company_url: 'https://abcdstudy.org/'
+    company_logo: 
+    location: Charleston, SC
+    date_start: '2018-06-01'
+    date_end: '2019-05-31'
+    description: 
 
 design:
   columns: '2'
