@@ -30,7 +30,7 @@ publishDate: "2022-02-15T00:00:00Z"
 slides: example
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
   ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
-tags: [COVID]
+tags: 
 title: Structural Racism and COVID-19 Response: higher risk of exposure drives disparate COVID-19 deaths among Black and Hispanic/ Latinx residents of Illinois, USA
 url_code: ""
 url_dataset: ""
