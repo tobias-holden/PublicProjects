@@ -23,8 +23,8 @@ date_format: Jan 2006
 #   Begin multi-line descriptions with YAML's `|2-` multi-line prefix.
 experience:
   - title: Malaria Modeling Research
-    company: Dr. Jaline Gerardin \nNorthwestern University
-    company_url: ''
+    company: Dr. Jaline Gerardin, Northwestern University
+    company_url: 'https://www.numalariamodeling.org/'
     company_logo: 
     location: Chicago, IL
     date_start: '2021-09-01'
@@ -36,8 +36,8 @@ experience:
         * Modelling
         * Deploying
   - title: COVID-19 Disparities Research 
-    company: Dr. Jaline Gerardin \nNorthwestern University
-    company_url: ''
+    company: Dr. Jaline Gerardin, Northwestern University
+    company_url: 'https://www.numalariamodeling.org/'
     company_logo: 
     location: Chicago, IL
     date_start: '2020-05-01'
@@ -45,7 +45,7 @@ experience:
     description:
   - title: Education Centered Medical Home
     company: Erie Family Health Center - Humboldt Park
-    company_url: ''
+    company_url: 'https://www.eriefamilyhealth.org/locations/humboldt/'
     company_logo: 
     location: Chicago, IL
     date_start: '2019-09-01'
@@ -58,6 +58,38 @@ experience:
     location: Charleston, SC
     date_start: '2018-06-01'
     date_end: '2019-05-31'
+    description: 
+  - title: NIH Post-baccalaureate Research Education Program (PREP)
+    company: Icahn School of Medicine at Mt. Sinai
+    company_url: 'https://icahn.mssm.edu/education/non-degree/prep'
+    company_logo: 
+    location: New York, NY
+    date_start: '2017-08-01'
+    date_end: '2018-05-31'
+    description: Quantitative pharmacology research and systems biomedicine coursework.
+  - title: Quantitative Biology Research
+    company: Dr. Thierry Emonet, Yale University
+    company_url: 'https://emonet.biology.yale.edu/'
+    company_logo: 
+    location: New Haven, CT
+    date_start: '2016-09-01'
+    date_end: '2017-05-01'
+    description: Undergraduate B.S. thesis research
+  - title: Reproductive Biology Research
+    company: Dr. Winifred Mak, Yale University 
+    company_url: 
+    company_logo: 
+    location: New Haven, CT
+    date_start: '2015-06-01'
+    date_end: '2016-06-01'
+    description: Science Technology and Research Scholars (STARS) summer fellowship
+  - title: Hoffman-La Roche Research Exchange Scholarship Program (RESP)
+    company: Dr. Alexander Schering, Deutsches Krebsforschungszentrum
+    company_url: 
+    company_logo: 
+    location: Heidelberg, Germany
+    date_start: '2012-06-01'
+    date_end: '2012-08-01'
     description: 
 
 design:
