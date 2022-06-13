@@ -32,7 +32,7 @@ content:
     - name: Malaria
       tag: Malaria
     - name: Other
-      tag: Demo
+      tag: Art
 
 design:
   # Choose how many columns the section has. Valid values: '1' or '2'.
