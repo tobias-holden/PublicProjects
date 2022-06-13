@@ -26,28 +26,25 @@ organizations:
   url: https://www.numalariamodeling.org/team.html
 role: MD-PhD Student
 social:
-- icon: envelope
-  icon_pack: fas
-  link: /#contact
 - icon: twitter
   icon_pack: fab
-  link: https://twitter.com/GeorgeCushen
+  link: https://mobile.twitter.com/tobiasmholden
 - icon: graduation-cap
   icon_pack: fas
-  link: https://scholar.google.co.uk/citations?user=sIwtMXoAAAAJ
+  link: https://scholar.google.co.uk/citations?user=wK3JrXUAAAAJ
 - icon: github
   icon_pack: fab
-  link: https://github.com/gcushen
+  link: https://github.com/tobias-holden
 - icon: linkedin
   icon_pack: fab
-  link: https://www.linkedin.com/
+  link: https://www.linkedin.com/in/tobias-holden-949b619b
 superuser: true
-title: Tobias Holden
+title: Tobias M. Holden
 ---
 
-Tobias Holden is an MD-PhD student in the Medical Scientist Training Program (MSTP) at Northwestern University. He is originally from South Carolina and graduated from Yale University in 2017 with a degree in Molecular, Cellular, and Developmental Biology. His PhD research is focused on modeling interventions to reduce malaria transmission. 
+Tobias Holden is an MD-PhD student in the Medical Scientist Training Program (MSTP) at Northwestern University. He is originally from South Carolina and graduated from Yale University in 2017 with a degree in Molecular, Cellular, and Developmental Biology. His PhD research is focused on using mathematical models to simulate interventions to reduce malaria transmission. 
 
-He is interested in applying mathematical modeling to population health, with a focus on social and environmental determinants of disease. He hopes to combine his training from HSIP and medical school to address the community health challenges that result from global climate change.
+He is interested in applying mathematical modeling to population health, with a focus on social and environmental determinants of disease. He hopes to combine his training from graduate and medical school to address the community health challenges that result from global climate change.
 
 
 {{< icon name="download" pack="fas" >}} Download my {{< staticref "uploads/demo_resume.pdf" "newtab" >}}resumé{{< /staticref >}}.
