@@ -15,7 +15,6 @@ This is an demonstration of the *chorrrds()* package, which provides information
 knitr::opts_chunk$set(echo = TRUE)
 library(chorrrds)
 library(tidyverse)
-library(shiny)
 ```
 
 ## {.tabset}
@@ -29,13 +28,7 @@ artist_list <- c("olivia-rodrigo",
                  "charli-xcx",
                  "rihanna")
 
-selectInput("by_artist",
-            "By Artist",
-            choices=artist_list,
-            selected = "rihanna",
-            multiple = F)
-renderPlot({
-  artist <- input$by_artist
+for(artist in artist_list){
   songs <- chorrrds::get_songs(artist)
   chords <- chorrrds::get_chords(songs)
 
@@ -48,7 +41,7 @@ renderPlot({
 
   chords <- merge(chords,sc,by=c("song","key"))
   
-  chords %>% 
+  p <- chords %>% 
     ggplot(aes(x=chord, 
                y=factor(rank, 
                         levels=sc$rank, 
@@ -66,7 +59,8 @@ renderPlot({
     ylab("Songs") + 
     xlab("Chords") +
     ggtitle(paste(artist,"song chords"))
-})
-
+  
+  print(p)
+}
 ```
 
