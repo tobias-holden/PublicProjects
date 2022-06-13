@@ -12,7 +12,7 @@ links:
 slides: example
 summary: An example of using the in-built project page.
 tags:
-- Deep Learning
+- COVID
 title: COVID-19 Racial & Ethnic Disparities
 url_code: ""
 url_pdf: ""
