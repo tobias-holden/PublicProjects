@@ -1,39 +1,40 @@
 ---
-abstract: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
-  ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum. Sed
-  ac faucibus dolor, scelerisque sollicitudin nisi. Cras purus urna, suscipit quis
-  sapien eu, pulvinar tempor diam. Quisque risus orci, mollis id ante sit amet, gravida
-  egestas nisl. Sed ac tempus magna. Proin in dui enim. Donec condimentum, sem id
-  dapibus fringilla, tellus enim condimentum arcu, nec volutpat est felis vel metus.
-  Vestibulum sit amet erat at nulla eleifend gravida.
+abstract: Racial and ethnic disparities in the COVID-19 pandemic are products of society, not biology. Considering age and geography in addition to race/ethnicity can help to identify the structural factors driving poorer outcomes for certain groups. Studies and policies aimed at reducing inequalities in disease exposure may reduce disparities in mortality more than those focused on drivers of case fatality.
+
 author_notes:
-- Equal contribution
-- Equal contribution
+- Northwestern University Department of Preventive Medicine and Institute for Global Health
+- Northwestern University Department of Obstetrics & Gynecology
+- Illinois Department of Public Health and Blue Cross Blue Shield of Illinois
+- Illinois Department of Public Health
+- Northwestern University Department of Preventive Medicine and Institute for Global Health
 authors:
 - admin
-- Robert Ford
+- Melissa A. Simon
+- Damon T. Arnold
+- Veronica Halloway
+- Jaline Gerardin
 date: "2013-07-01T00:00:00Z"
-doi: ""
+doi: "https://doi.org/10.1186/s12889-022-12698-9"
 featured: true
 image:
-  caption: 'Image credit: [**Unsplash**](https://unsplash.com/photos/pLCdAaMFLTE)'
+  caption: 'Image credit: [**BMC**](https://media.springernature.com/full/springer-static/image/art%3A10.1186%2Fs12889-022-12698-9/MediaObjects/12889_2022_12698_Fig4_HTML.png?as=webp)'
   focal_point: ""
   preview_only: false
 projects:
-- example
-publication: In *Wowchemy Conference*
-publication_short: In *ICW*
+- Illinois COVID-19 Disparities
+publication: In *BMC Public Health*
+publication_short: In *BMC PH*
 publication_types:
 - "1"
-publishDate: "2017-01-01T00:00:00Z"
+publishDate: "2022-02-15T00:00:00Z"
 slides: example
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
   ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
-tags: []
-title: An example conference paper
+tags: [COVID]
+title: An example paper
 url_code: ""
 url_dataset: ""
-url_pdf: ""
+url_pdf: "https://bmcpublichealth.biomedcentral.com/track/pdf/10.1186/s12889-022-12698-9.pdf"
 url_poster: ""
 url_project: ""
 url_slides: ""

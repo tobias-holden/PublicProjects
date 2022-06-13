@@ -33,7 +33,7 @@ feature:
     icon_pack: fas
     name: GIS
   - description: 
-    icon: podium-star
+    icon: keynote
     icon_pack: fas
     name: Public Speaking
   - description: 
