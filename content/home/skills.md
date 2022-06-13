@@ -33,10 +33,6 @@ feature:
     icon_pack: fas
     name: GIS
   - description: 
-    icon: keynote
-    icon_pack: fas
-    name: Public Speaking
-  - description: 
     icon: stethoscope
     icon_pack: fas
     name: Medicine
@@ -44,6 +40,10 @@ feature:
     icon: newspaper
     icon_pack: fas
     name: Scientific Writing
+  - description: 
+    icon: keynote
+    icon_pack: fab
+    name: Public Speaking
     
 # Uncomment to use emoji icons.
 #- icon: ":smile:"
