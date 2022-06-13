@@ -31,7 +31,7 @@ slides: example
 summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus
   ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
 tags: [COVID]
-title: An example paper
+title: Structural Racism and COVID-19 Response: higher risk of exposure drives disparate COVID-19 deaths among Black and Hispanic/ Latinx residents of Illinois, USA
 url_code: ""
 url_dataset: ""
 url_pdf: "https://bmcpublichealth.biomedcentral.com/track/pdf/10.1186/s12889-022-12698-9.pdf"
