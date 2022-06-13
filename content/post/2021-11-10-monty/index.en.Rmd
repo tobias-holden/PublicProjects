@@ -16,25 +16,25 @@ theme_presentation<- function(base_size = 8, base_family = "") {
   theme_bw(base_size = base_size, base_family = base_family) %+replace%
     theme(
       strip.background = element_blank(),
-      strip.text.x = element_text(size = 12,colour="white"),
-      strip.text.y = element_text(size = 12,colour="white"),
-      axis.text.x = element_text(size=12,colour="white"),
-      axis.text.y = element_text(size=12,colour="white",hjust=1),
+      strip.text.x = element_text(size = 8,colour="white"),
+      strip.text.y = element_text(size = 8,colour="white"),
+      axis.text.x = element_text(size=8,colour="white"),
+      axis.text.y = element_text(size=8,colour="white",hjust=1),
       axis.ticks =  element_line(colour = "white"), 
-      axis.title.x= element_text(size=12,colour="white"),
-      axis.title.y= element_text(size=12,angle=90,colour="white"),
-      axis.title.y.right= element_text(size=12,angle=90,colour="white"),
+      axis.title.x= element_text(size=8,colour="white"),
+      axis.title.y= element_text(size=8,angle=90,colour="white"),
+      axis.title.y.right= element_text(size=8,angle=90,colour="white"),
       panel.background = element_rect(fill="black"), 
       panel.border =element_blank(),  
       panel.grid.major = element_blank(), 
       panel.grid.minor = element_blank(), 
       panel.spacing = unit(1, "lines"), 
       plot.background = element_rect(fill="black"), 
-      plot.title =element_text(size=12,colour="white"), 
+      plot.title =element_text(size=8,colour="white"), 
       plot.margin = unit(c(0,1,0,1), "lines"),
       legend.background=element_rect(fill=NA, color=NA),
-      legend.title=element_text(size=12,colour="white"),
-      legend.text=element_text(size=12,colour="white"),
+      legend.title=element_text(size=8,colour="white"),
+      legend.text=element_text(size=8,colour="white"),
       legend.key = element_rect( fill = NA, colour=NA),
       legend.key.size = unit(c(1, 1), "lines"), 
       legend.position="bottom",
@@ -159,12 +159,15 @@ ggplot(m, aes(x=run)) +
   #geom_jitter(aes(y=as.numeric(result),color="Individual"),alpha=0.1, height = 0.02) +
   #geom_segment(aes(xend=run, y=as.numeric(result),yend=cum_win/run, color=result), alpha=0.4,  size=0.2) +
   geom_path(aes(y=cum_win/run, color=strategy)) +
-  facet_grid(n_door~n_car, labeller = label_both) +
+  facet_grid(factor(paste(n_door,"doors"),
+                    levels=paste(seq(3,10),"doors"))~paste(n_car,"cars")) +
   labs(color="", linetype="") +
   theme_presentation() +
-  theme(legend.box="vertical", legend.direction = "horizontal", legend.justification = "left", legend.box.just = "left", legend.spacing = unit(-1,"lines"), axis.title.x=element_blank(), axis.text.x = element_blank()) +
-  ylab("Winning") +
+  theme(legend.box="vertical", legend.direction = "horizontal", legend.justification = "left", legend.box.just = "left", legend.spacing = unit(-1,"lines"), axis.title.x=element_blank(), axis.text.x = element_blank(),
+        axis.text.y=element_text(size=4)) +
+  ylab("P(winning)") +
   guides(colour = guide_legend(override.aes = list(alpha = 1, size=2))) +
-  geom_text(data=m[!is.na(m$final),], aes(x=max(m$run)/2, y=0.8, label=final), x=max(m$run,na.rm=T)/ 2, y=0.8, color="yellow") 
+  geom_text(data=m[!is.na(m$final),], aes(x=max(m$run)/2, y=0.8, label=final), x=max(m$run,na.rm=T)/ 2, y=0.8, 
+            color="yellow", size=2.5) 
   
 ```
