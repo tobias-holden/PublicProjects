@@ -27,8 +27,10 @@ content:
   filter_button:
     - name: All
       tag: '*'
-    - name: Deep Learning
-      tag: Deep Learning
+    - name: COVID
+      tag: COVID
+    - name: Malaria
+      tag: Malaria
     - name: Other
       tag: Demo
 
