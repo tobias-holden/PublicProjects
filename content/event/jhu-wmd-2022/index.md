@@ -19,7 +19,7 @@ image:
   focal_point: Right
 links:
 
-location: 
+location: JHU WMD 2022
 projects:
 - indie
 
