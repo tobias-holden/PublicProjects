@@ -7,10 +7,10 @@ address:
   postcode: 
   region: 
   street: 
-all_day: false
+all_day: true
 authors: [admin]
-date: "2023-04-25T13:00:00Z"
-date_end: "2023-04-25T13:00:00Z"
+date: "2022-04-25T13:00:00Z"
+date_end: "2022-04-25T13:00:00Z"
 event: "Johns Hopkins University Malaria Research Institute: World Malaria Day Symposium (2022)"
 event_url: "https://malaria.jhsph.edu/conferences/2022-world-malaria-day-symposium/"
 featured: true
