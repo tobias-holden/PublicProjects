@@ -3,10 +3,10 @@
 # widget: contact
 # 
 # # This file represents a page section.
-# headless: true
+# headless: false
 # 
 # # Order that this section appears on the page.
-# weight: 130
+# weight: 0
 # 
 # title: Contact
 # subtitle:
