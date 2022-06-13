@@ -2,37 +2,72 @@
 title: "Chords"
 author: "Tobias Holden"
 date: "6/12/2022"
-output: html_document
-editor_options: 
-  chunk_output_type: console
+categories: ["R"]
+tags: ["R Markdown", "chorrrds", "fun"]
 ---
 
+<link href="shared/selectize/css/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="shared/selectize/js/selectize.min.js"></script>
+<script src="shared/selectize/accessibility/js/selectize-plugin-a11y.min.js"></script>
 
 
-<pre class="r"><code>artist &lt;- &quot;olivia-rodrigo&quot;
-songs &lt;- chorrrds::get_songs(artist)
-chords &lt;- chorrrds::get_chords(songs)
+<div id="chorrrds" class="section level1">
+<h1>Chorrrds</h1>
+<p>This is an demonstration of the <em>chorrrds()</em> package, which provides information about the chords used in songs by popular artists.</p>
+</div>
+<div id="by-artist" class="section level1">
+<h1>By Artist</h1>
+<p>An example for Olivia Rodrigo</p>
+<pre class="r"><code>artist_list &lt;- c(&quot;olivia-rodrigo&quot;,
+                 &quot;charli-xcx&quot;,
+                 &quot;rihanna&quot;)
 
-sc &lt;- chords %&gt;% 
-  filter(!duplicated(song)) %&gt;%
-  select(song,key) %&gt;%
-  arrange(key)
+selectInput(&quot;by_artist&quot;,
+            &quot;By Artist&quot;,
+            choices=artist_list)</code></pre>
+<div class="form-group shiny-input-container">
+<label class="control-label" id="by_artist-label" for="by_artist">By Artist</label>
+<div>
+<select id="by_artist"><option value="olivia-rodrigo" selected>olivia-rodrigo</option>
+<option value="charli-xcx">charli-xcx</option>
+<option value="rihanna">rihanna</option></select>
+<script type="application/json" data-for="by_artist" data-nonempty="">{"plugins":["selectize-plugin-a11y"]}</script>
+</div>
+</div>
+<pre class="r"><code>renderPlot({
+  artist &lt;- input$by_artist
+  songs &lt;- chorrrds::get_songs(artist)
+  chords &lt;- chorrrds::get_chords(songs)
 
-sc$rank &lt;- rownames(sc)
+  sc &lt;- chords %&gt;% 
+    filter(!duplicated(song)) %&gt;%
+    select(song,key) %&gt;%
+    arrange(key)
+  
+  sc$rank &lt;- rownames(sc)
 
-chords &lt;- merge(chords,sc,by=c(&quot;song&quot;,&quot;key&quot;))
-
-chords %&gt;% 
-  ggplot(aes(x=chord, y=factor(rank,levels=sc$rank, labels=sc$song), fill=key)) +
-  geom_tile(color=&#39;white&#39;)+
-  theme_minimal()+
-  theme(panel.grid=element_blank(),
-        legend.position=&quot;bottom&quot;,
-        axis.text.x = element_text(size=8,
-                                angle=90,
-                                hjust=0,
-                                vjust=0)) +
-  scale_x_discrete(position=&quot;top&quot;) +
-  ylab(&quot;Songs&quot;) + xlab(&quot;Chords&quot;) +
-  ggtitle(paste(artist,&quot;song chords&quot;))</code></pre>
-<p><img src="{{< blogdown/postref >}}index.en_files/figure-html/unnamed-chunk-1-1.png" width="672" /></p>
+  chords &lt;- merge(chords,sc,by=c(&quot;song&quot;,&quot;key&quot;))
+  
+  chords %&gt;% 
+    ggplot(aes(x=chord, 
+               y=factor(rank, 
+                        levels=sc$rank, 
+                        labels=sc$song), 
+               fill=key)) +
+    geom_tile(color=&#39;white&#39;)+
+    theme_minimal()+
+    theme(panel.grid=element_blank(),
+          legend.position=&quot;bottom&quot;,
+          axis.text.x = element_text(size=8,
+                                     angle=90,
+                                     hjust=0,
+                                     vjust=0)) +
+    scale_x_discrete(position=&quot;top&quot;) +
+    ylab(&quot;Songs&quot;) + 
+    xlab(&quot;Chords&quot;) +
+    ggtitle(paste(artist,&quot;song chords&quot;)) -&gt; p
+  
+  print(p)
+})</code></pre>
+<p><div id="out44be4ddb8fd7860a" class="shiny-plot-output" style="width:100%;height:400px;"></div></p>
+</div>
